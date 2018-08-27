@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
+    @svg('assets/sprite.svg', 'sprite-symbol-usage')
     <div id="app"></div>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/index.js') }}"></script>
 </body>
 </html>

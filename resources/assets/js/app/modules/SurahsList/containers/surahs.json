@@ -1,0 +1,572 @@
+[
+    {
+        "number": 1,
+        "name_transcription": "Аль-Фатиха",
+        "name": "Открывающая Коран"
+    },
+    {
+        "number": 2,
+        "name_transcription": "Аль-Бакара",
+        "name": "Корова"
+    },
+    {
+        "number": 3,
+        "name_transcription": "Алю Имран",
+        "name": "Семейство Имрана"
+    },
+    {
+        "number": 4,
+        "name_transcription": "Ан-Ниса",
+        "name": "Женщины"
+    },
+    {
+        "number": 5,
+        "name_transcription": "Аль-Маида",
+        "name": "Трапеза"
+    },
+    {
+        "number": 6,
+        "name_transcription": "Аль-Анам",
+        "name": "Скот"
+    },
+    {
+        "number": 7,
+        "name_transcription": "Аль-Араф",
+        "name": "Ограды"
+    },
+    {
+        "number": 8,
+        "name_transcription": "Аль-Анфаль",
+        "name": "Трофеи"
+    },
+    {
+        "number": 9,
+        "name_transcription": "Ат-Тауба",
+        "name": "Покаяние"
+    },
+    {
+        "number": 10,
+        "name_transcription": "Йунус",
+        "name": "Иона"
+    },
+    {
+        "number": 11,
+        "name_transcription": "Худ",
+        "name": "Худ"
+    },
+    {
+        "number": 12,
+        "name_transcription": "Йусуф",
+        "name": "Иосиф"
+    },
+    {
+        "number": 13,
+        "name_transcription": "Ар-Раад",
+        "name": "Гром"
+    },
+    {
+        "number": 14,
+        "name_transcription": "Ибрахим",
+        "name": "Авраам"
+    },
+    {
+        "number": 15,
+        "name_transcription": "Аль-Хиджр",
+        "name": "Хиджр"
+    },
+    {
+        "number": 16,
+        "name_transcription": "Ан-Нахль",
+        "name": "Пчёлы"
+    },
+    {
+        "number": 17,
+        "name_transcription": "Аль-Исра",
+        "name": "Ночной перенос"
+    },
+    {
+        "number": 18,
+        "name_transcription": "Аль-Кахф",
+        "name": "Пещера"
+    },
+    {
+        "number": 19,
+        "name_transcription": "Марьям",
+        "name": "Мария"
+    },
+    {
+        "number": 20,
+        "name_transcription": "Та Ха",
+        "name": "Та Ха"
+    },
+    {
+        "number": 21,
+        "name_transcription": "Аль-Анбийа",
+        "name": "Пророки"
+    },
+    {
+        "number": 22,
+        "name_transcription": "Аль-Хаджж",
+        "name": "Паломничество"
+    },
+    {
+        "number": 23,
+        "name_transcription": "Аль-Муминун",
+        "name": "Верующие"
+    },
+    {
+        "number": 24,
+        "name_transcription": "Ан-Нур",
+        "name": "Свет"
+    },
+    {
+        "number": 25,
+        "name_transcription": "Аль-Фуркан",
+        "name": "Различение"
+    },
+    {
+        "number": 26,
+        "name_transcription": "Аш-Шуара",
+        "name": "Поэты"
+    },
+    {
+        "number": 27,
+        "name_transcription": "Ан-Намль",
+        "name": "Муравьи"
+    },
+    {
+        "number": 28,
+        "name_transcription": "Аль-Касас",
+        "name": "Рассказ"
+    },
+    {
+        "number": 29,
+        "name_transcription": "Аль-Анкабут",
+        "name": "Паук"
+    },
+    {
+        "number": 30,
+        "name_transcription": "Ар-Рум",
+        "name": "Римляне"
+    },
+    {
+        "number": 31,
+        "name_transcription": "Лукман",
+        "name": "Лукман"
+    },
+    {
+        "number": 32,
+        "name_transcription": "Ас-Саджда",
+        "name": "Земной поклон"
+    },
+    {
+        "number": 33,
+        "name_transcription": "Аль-Ахзаб",
+        "name": "Союзники"
+    },
+    {
+        "number": 34,
+        "name_transcription": "Саба",
+        "name": "Сава"
+    },
+    {
+        "number": 35,
+        "name_transcription": "Фатыр",
+        "name": "Творец"
+    },
+    {
+        "number": 36,
+        "name_transcription": "Йа Син",
+        "name": "Йа Син"
+    },
+    {
+        "number": 37,
+        "name_transcription": "Ас-Саффат",
+        "name": "Выстроившиеся в ряды"
+    },
+    {
+        "number": 38,
+        "name_transcription": "Сад",
+        "name": "Сад"
+    },
+    {
+        "number": 39,
+        "name_transcription": "Аз-Зумар",
+        "name": "Толпы"
+    },
+    {
+        "number": 40,
+        "name_transcription": "Гафир",
+        "name": "Прощающий"
+    },
+    {
+        "number": 41,
+        "name_transcription": "Фуссылат",
+        "name": "Разъяснены"
+    },
+    {
+        "number": 42,
+        "name_transcription": "Аш-Шура",
+        "name": "Совет"
+    },
+    {
+        "number": 43,
+        "name_transcription": "Аз-Зухруф",
+        "name": "Украшения"
+    },
+    {
+        "number": 44,
+        "name_transcription": "Ад-Духан",
+        "name": "Дым"
+    },
+    {
+        "number": 45,
+        "name_transcription": "Аль-Джасийа",
+        "name": "Коленопреклонённые"
+    },
+    {
+        "number": 46,
+        "name_transcription": "Аль-Ахкаф",
+        "name": "Барханы"
+    },
+    {
+        "number": 47,
+        "name_transcription": "Мухаммад",
+        "name": "Мухаммад"
+    },
+    {
+        "number": 48,
+        "name_transcription": "Аль-Фатх",
+        "name": "Победа"
+    },
+    {
+        "number": 49,
+        "name_transcription": "Аль-Худжурат",
+        "name": "Комнаты"
+    },
+    {
+        "number": 50,
+        "name_transcription": "Каф",
+        "name": "Каф"
+    },
+    {
+        "number": 51,
+        "name_transcription": "Аз-Зарийат",
+        "name": "Рассеивающие прах"
+    },
+    {
+        "number": 52,
+        "name_transcription": "Ат-Тур",
+        "name": "Гора"
+    },
+    {
+        "number": 53,
+        "name_transcription": "Ан-Наджм",
+        "name": "Звезда"
+    },
+    {
+        "number": 54,
+        "name_transcription": "Аль-Камар",
+        "name": "Месяц"
+    },
+    {
+        "number": 55,
+        "name_transcription": "Ар-Рахман",
+        "name": "Милостивый"
+    },
+    {
+        "number": 56,
+        "name_transcription": "Аль-Вакиа",
+        "name": "Событие"
+    },
+    {
+        "number": 57,
+        "name_transcription": "Аль-Хадид",
+        "name": "Железо"
+    },
+    {
+        "number": 58,
+        "name_transcription": "Аль-Муджадила",
+        "name": "Препирающаяся"
+    },
+    {
+        "number": 59,
+        "name_transcription": "Аль-Хашр",
+        "name": "Сбор"
+    },
+    {
+        "number": 60,
+        "name_transcription": "Аль-Мумтахана",
+        "name": "Испытуемая"
+    },
+    {
+        "number": 61,
+        "name_transcription": "Ас-Сафф",
+        "name": "Ряды"
+    },
+    {
+        "number": 62,
+        "name_transcription": "Аль-Джумуа",
+        "name": "Собрание"
+    },
+    {
+        "number": 63,
+        "name_transcription": "Аль-Мунафикун",
+        "name": "Лицемеры"
+    },
+    {
+        "number": 64,
+        "name_transcription": "Ат-Тагабун",
+        "name": "Взаимное обделение"
+    },
+    {
+        "number": 65,
+        "name_transcription": "Ат-Талак",
+        "name": "Развод"
+    },
+    {
+        "number": 66,
+        "name_transcription": "Ат-Тахрим",
+        "name": "Запрещение"
+    },
+    {
+        "number": 67,
+        "name_transcription": "Аль-Мульк",
+        "name": "Власть"
+    },
+    {
+        "number": 68,
+        "name_transcription": "Аль-Калам",
+        "name": "Письменная трость"
+    },
+    {
+        "number": 69,
+        "name_transcription": "Аль-Хакка",
+        "name": "Неминуемое"
+    },
+    {
+        "number": 70,
+        "name_transcription": "Аль-Мааридж",
+        "name": "Ступени"
+    },
+    {
+        "number": 71,
+        "name_transcription": "Нух",
+        "name": "Ной"
+    },
+    {
+        "number": 72,
+        "name_transcription": "Аль-Джинн",
+        "name": "Джинны"
+    },
+    {
+        "number": 73,
+        "name_transcription": "Аль-Муззаммиль",
+        "name": "Закутавшийся"
+    },
+    {
+        "number": 74,
+        "name_transcription": "Аль-Муддассир",
+        "name": "Завернувшийся"
+    },
+    {
+        "number": 75,
+        "name_transcription": "Аль-Кийама",
+        "name": "Воскресение"
+    },
+    {
+        "number": 76,
+        "name_transcription": "Аль-Инсан",
+        "name": "Человек"
+    },
+    {
+        "number": 77,
+        "name_transcription": "Аль-Мурсалят",
+        "name": "Посылаемые"
+    },
+    {
+        "number": 78,
+        "name_transcription": "Ан-Наба",
+        "name": "Весть"
+    },
+    {
+        "number": 79,
+        "name_transcription": "Ан-Назиат",
+        "name": "Исторгающие"
+    },
+    {
+        "number": 80,
+        "name_transcription": "Абаса",
+        "name": "Нахмурился"
+    },
+    {
+        "number": 81,
+        "name_transcription": "Ат-Таквир",
+        "name": "Скручивание"
+    },
+    {
+        "number": 82,
+        "name_transcription": "Аль-Инфитар",
+        "name": "Раскалывание"
+    },
+    {
+        "number": 83,
+        "name_transcription": "Аль-Мутаффифин",
+        "name": "Обвешивающие"
+    },
+    {
+        "number": 84,
+        "name_transcription": "Аль-Иншикак",
+        "name": "Разверзнется"
+    },
+    {
+        "number": 85,
+        "name_transcription": "Аль-Бурудж",
+        "name": "Созвездия зодиака"
+    },
+    {
+        "number": 86,
+        "name_transcription": "Ат-Тарик",
+        "name": "Ночной путник"
+    },
+    {
+        "number": 87,
+        "name_transcription": "Аль-Аля",
+        "name": "Всевышний"
+    },
+    {
+        "number": 88,
+        "name_transcription": "Аль-Гашийа",
+        "name": "Покрывающее"
+    },
+    {
+        "number": 89,
+        "name_transcription": "Аль-Фаджр",
+        "name": "Заря"
+    },
+    {
+        "number": 90,
+        "name_transcription": "Аль-Балад",
+        "name": "Город"
+    },
+    {
+        "number": 91,
+        "name_transcription": "Аш-Шамс",
+        "name": "Солнце"
+    },
+    {
+        "number": 92,
+        "name_transcription": "Аль-Лайл",
+        "name": "Ночь"
+    },
+    {
+        "number": 93,
+        "name_transcription": "Ад-Духа",
+        "name": "Утро"
+    },
+    {
+        "number": 94,
+        "name_transcription": "Аш-Шарх",
+        "name": "Раскрытие"
+    },
+    {
+        "number": 95,
+        "name_transcription": "Ат-Тин",
+        "name": "Смоковница"
+    },
+    {
+        "number": 96,
+        "name_transcription": "Аль-Алак",
+        "name": "Сгусток крови"
+    },
+    {
+        "number": 97,
+        "name_transcription": "Аль-Кадр",
+        "name": "Предопределение"
+    },
+    {
+        "number": 98,
+        "name_transcription": "Аль-Баййина",
+        "name": "Ясное знамение"
+    },
+    {
+        "number": 99,
+        "name_transcription": "Аз-Залзала",
+        "name": "Сотрясение"
+    },
+    {
+        "number": 100,
+        "name_transcription": "Аль-Адийат",
+        "name": "Скачущие"
+    },
+    {
+        "number": 101,
+        "name_transcription": "Аль-Кариа",
+        "name": "Великое бедствие"
+    },
+    {
+        "number": 102,
+        "name_transcription": "Ат-Такасур",
+        "name": "Страсть к приумножению"
+    },
+    {
+        "number": 103,
+        "name_transcription": "Аль-Аср",
+        "name": "Время"
+    },
+    {
+        "number": 104,
+        "name_transcription": "Аль-Хумаза",
+        "name": "Хулитель"
+    },
+    {
+        "number": 105,
+        "name_transcription": "Аль-Филь",
+        "name": "Слон"
+    },
+    {
+        "number": 106,
+        "name_transcription": "Курейш",
+        "name": "Курейшиты"
+    },
+    {
+        "number": 107,
+        "name_transcription": "Аль-Маун",
+        "name": "Мелочь"
+    },
+    {
+        "number": 108,
+        "name_transcription": "Аль-Каусар",
+        "name": "Изобилие"
+    },
+    {
+        "number": 109,
+        "name_transcription": "Аль-Кафирун",
+        "name": "Неверующие"
+    },
+    {
+        "number": 110,
+        "name_transcription": "Ан-Наср",
+        "name": "Помощь"
+    },
+    {
+        "number": 111,
+        "name_transcription": "Аль-Масад",
+        "name": "Пальмовые волокна"
+    },
+    {
+        "number": 112,
+        "name_transcription": "Аль-Ихлас",
+        "name": "Очищение веры"
+    },
+    {
+        "number": 113,
+        "name_transcription": "Аль-Фалак",
+        "name": "Рассвет"
+    },
+    {
+        "number": 114,
+        "name_transcription": "Ан-Нас",
+        "name": "Люди"
+    }
+]

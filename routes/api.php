@@ -1,3 +1,3 @@
 <?php
 
-Route::get('surat/{number}', 'AyatsController@index');
+Route::get('surah/{number}', 'AyatsController@index');

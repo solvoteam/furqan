@@ -1,6 +1,295 @@
-
 // Fonts
-//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 
 // Variables
 @import 'variables';
+
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import 'normalize';
+
+* {
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration: none;
+    color: #6698cc;
+}
+
+.sprite-symbol-usage {
+    display: none;
+}
+
+.header {
+    height: 95px;
+    background: $blue;
+    .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    span {
+        color: #fff;
+    }
+    &--player {
+        position: absolute;
+        width: 100%;
+        background-color: transparent;
+        top: 0;
+    }
+    &__logo {
+        margin: 0 auto;
+        img {
+            width: 83px;
+            height: 51px;
+        }
+    }
+}
+
+.input {
+    border: 2px solid $blue;
+    padding: 0 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    height: 50px;
+    &::placeholder {
+        color: darken(#dfe1e3, 15%);
+        opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+        color: darken(#dfe1e3, 15%);
+    }
+
+    &::-ms-input-placeholder {
+        color: darken(#dfe1e3, 15%);
+    }
+}
+
+.surahs-list {
+    margin-top: 70px;
+    .input-block {
+        margin-bottom: 70px;
+        .input {
+            width: 100%;
+        }
+    }
+    &__item {
+        font-size: 18px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        b {
+            color: #bdc9d3;
+            margin-right: 15px;
+        }
+        a {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        span {
+            color: #bdc9d3;
+        }
+    }
+}
+
+.audio-player {
+    height: 100vh;
+    background-image: url('/assets/img/player-bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.player {
+    background-color: rgba(255, 255, 255, 0.85);
+    height: 200px;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .container {
+        position: relative;
+    }
+    &__progress-bar {
+        display: flex;
+        align-items: center;
+        span {
+            font-size: 14px;
+            color: #6698cc;
+            font-weight: 600;
+            &:first-of-type {
+                margin-right: 15px;
+            }
+            &:last-of-type {
+                margin-left: 15px;
+            }
+        }
+        &-line {
+            height: 3px;
+            width: 100%;
+            background-color: #ccd3d9;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            div {
+                background-color: #6698cc;
+                height: 100%;
+                border-radius: 30px;
+                position: relative;
+                i {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    background-color: #6698cc;
+                    position: absolute;
+                    border-radius: 30px;
+                    top: -5px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    &__controllers {
+        svg {
+            fill: #656d74;
+            cursor: pointer;
+            &:hover {
+                fill: #383c40;
+            }
+        }
+        &-volume {
+            display: flex;
+            align-items: center;
+            width: 230px;
+            position: absolute;
+            right: 65px;
+            bottom: 5px;
+            svg {
+                margin-right: 10px;
+            }
+        }
+        &-buttons {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            width: 250px;
+            justify-content: center;
+            margin-top: 20px;
+            .mirror {
+                transform: rotate(-180deg);
+            }
+            svg {
+                margin-right: 20px;
+            }
+        }
+    }
+    &__surah-info {
+        text-align: center;
+        margin-bottom: 20px;
+        b,
+        span {
+            color: #656d74;
+        }
+        b {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        span {
+            font-size: 17px;
+            color: #959fa8;
+        }
+    }
+}
+
+.ayat-block {
+    position: absolute;
+    transform: translate(-50%, calc(-50% - 95px));
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    p {
+        color: #fff;
+    }
+    &__arabic {
+        font-size: 48px;
+        margin-bottom: 50px;
+        line-height: 72px;
+    }
+    &__translate {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    &__transition {
+        transition: all 300ms ease-in-out;
+        &--entering {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        &--entered {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        &--exiting,
+        &--exited {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        &--exited {
+            .game-results {
+                display: none;
+            }
+        }
+    }
+}
+
+.surah-menu {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__label {
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        svg {
+            fill: #fff;
+            height: 18px;
+            width: 24px;
+        }
+    }
+}
+
+.popup-menu {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+    padding: 25px 30px;
+    margin-top: 25px;
+    top: 0;
+    ul {
+        max-height: 600px;
+        overflow: auto;
+        li {
+            margin-bottom: 14px;
+            font-size: 16px;
+            span,
+            i {
+                color: #8e959c;
+                cursor: pointer;
+                font-weight: 500;
+                &.active {
+                    color: #52585d;
+                }
+                &:hover {
+                    color: #4585c7;
+                }
+            }
+            i {
+                margin-right: 10px;
+                font-style: normal;
+            }
+        }
+    }
+}
