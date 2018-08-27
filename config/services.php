@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'everyayah' => [
+        'url_base' => 'http://www.everyayah.com/data/Abu_Bakr_Ash-Shaatree_64kbps/',
+    ],
+
 ];
