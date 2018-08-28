@@ -34831,7 +34831,24 @@ var SurahsList = function SurahsList(_ref) {
         onChangeInput = _ref.onChangeInput,
         onOpenSurah = _ref.onOpenSurah;
 
-    var surahsCount = Math.round(surahs.length / 3);
+
+    var third1 = function third1() {
+        return surahs.slice(0, Math.ceil(surahs.length / 3));
+    };
+
+    var third2 = function third2() {
+        var first_third_length = third1().length;
+        var left_surats_length = surahs.length - first_third_length;
+        return surahs.slice(first_third_length, first_third_length + Math.ceil(left_surats_length / 2));
+    };
+
+    var third3 = function third3() {
+        var first_n_second_length = third1().length + third2().length;
+        return surahs.slice(first_n_second_length);
+    };
+
+    var funcArray = [third1, third2, third3];
+
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'surahs-list' },
@@ -34843,7 +34860,7 @@ var SurahsList = function SurahsList(_ref) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'col-md-4', key: i },
-                    surahs.slice(surahsCount * i, surahsCount * (i + 1)).map(function (surah) {
+                    funcArray[i]().map(function (surah) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_SurahItem__["a" /* default */], {
                             key: surah.number,
                             number: surah.number,
