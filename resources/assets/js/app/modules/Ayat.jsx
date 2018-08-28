@@ -7,7 +7,7 @@ const Ayat = ({ ayat, visibleAyat }) => (
         <div className="ayat-block">
             <p className="ayat-block__arabic">{ayat.text}</p>
             <p className="ayat-block__translate">
-                {ayat.translation.ayat_id}. {ayat.translation.text}
+                {ayat.number}. {ayat.translation.text}
             </p>
         </div>
     </div>

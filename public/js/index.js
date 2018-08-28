@@ -35279,7 +35279,7 @@ var Ayat = function Ayat(_ref) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'p',
                 { className: 'ayat-block__translate' },
-                ayat.translation.ayat_id,
+                ayat.number,
                 '. ',
                 ayat.translation.text
             )
