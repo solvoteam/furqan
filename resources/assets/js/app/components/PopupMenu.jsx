@@ -1,12 +1,23 @@
 import React, { Fragment } from 'react';
 import { compose, withHandlers, withState, lifecycle } from 'recompose';
+import { Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 
-const PopupMenu = ({ open, onClick, target, children }) => {
+const PopupMenu = ({ id, open, title, onClick, target, children }) => {
     return (
         <Fragment>
-            <div onClick={onClick}>
+            <div id={id} onClick={onClick}>
                 {target}
-                {open && <div className="popup-menu">{children}</div>}
+                {open && (
+                    <Popover
+                        className="popup-menu"
+                        placement="bottom"
+                        isOpen={open}
+                        target={id}
+                        toggle={onClick}>
+                        {title && <PopoverHeader>Popover Title</PopoverHeader>}
+                        <PopoverBody>{children}</PopoverBody>
+                    </Popover>
+                )}
             </div>
         </Fragment>
     );
@@ -14,22 +25,9 @@ const PopupMenu = ({ open, onClick, target, children }) => {
 
 export default compose(
     withState('open', 'setOpen', false),
-    lifecycle({
-        componentDidMount() {
-            this.documentClickListener = e => {
-                if (!/popup-menu|surah-menu|svg|path|icon/.test(e.target.className)) {
-                    this.props.setOpen(false);
-                }
-            };
-            document.addEventListener('click', this.documentClickListener);
-        },
-        componentWillUnmount() {
-            document.removeEventListener('click', this.documentClickListener);
-        },
-    }),
     withHandlers({
-        onClick: ({ setOpen, open }) => () => {
-            setOpen(!open);
+        onClick: ({ setOpen, open, onOpened }) => () => {
+            setOpen(!open, onOpened);
         },
     }),
 )(PopupMenu);

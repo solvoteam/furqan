@@ -14,18 +14,32 @@ const Header = ({ inPlayer, surahs, ayats, currentAyatNumber, currentSurah }) =>
             {inPlayer && (
                 <div className="surah-menu">
                     <PopupMenu
+                        id="surahs-popup"
+                        onOpened={() => {
+                            setTimeout(() => {
+                                document.querySelector('.popover-body ul').scrollTop =
+                                    document.querySelector(
+                                        '.popover-body ul #surah-' + currentSurah.number,
+                                    ).offsetTop -
+                                    document.querySelector(
+                                        '.popover-body ul #surah-' + currentSurah.number,
+                                    ).offsetHeight *
+                                        2;
+                            });
+                        }}
                         target={
                             <span className="surah-menu__label">
-                                {currentSurah.name}
+                                {currentSurah.number}. {currentSurah.name}
                                 <Icon name="arrow" />
                             </span>
                         }>
                         <ul>
                             {surahs.map(item => (
                                 <li
+                                    id={`surah-${item.number}`}
                                     key={item.number}
                                     className={currentSurah.name === item.name ? 'active' : ''}>
-                                    <Link to={`/surah/${item.number}`}>
+                                    <Link to={`/surah/${item.number}/ayat/1`}>
                                         <i>{item.number}</i>
                                         <span>{item.name}</span>
                                     </Link>
@@ -34,9 +48,10 @@ const Header = ({ inPlayer, surahs, ayats, currentAyatNumber, currentSurah }) =>
                         </ul>
                     </PopupMenu>
                     <PopupMenu
+                        id="ayats-popup"
                         target={
                             <span className="surah-menu__label">
-                                {currentAyatNumber + 1}
+                                {parseInt(currentAyatNumber) + 1}
                                 <Icon name="arrow" />
                             </span>
                         }>
@@ -56,9 +71,9 @@ const Header = ({ inPlayer, surahs, ayats, currentAyatNumber, currentSurah }) =>
                     </PopupMenu>
                 </div>
             )}
-            <div className="header__logo">
+            <Link className="header__logo" to="/">
                 <img src="/assets/img/logo.png" />
-            </div>
+            </Link>
         </div>
     </div>
 );

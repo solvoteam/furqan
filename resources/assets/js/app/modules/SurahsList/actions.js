@@ -3,6 +3,11 @@ export const setAyats = items => ({
     payload: items,
 });
 
+export const setCurAyatNumber = num => ({
+    type: 'AYATS:SET_CUR_AYAT',
+    payload: num,
+});
+
 export const setSurah = surah => ({
     type: 'AYATS:SET_SURAH',
     payload: surah,

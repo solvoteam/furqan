@@ -21,6 +21,7 @@ a {
 }
 
 .header {
+    $self: &;
     height: 95px;
     background: $blue;
     .container {
@@ -36,6 +37,11 @@ a {
         width: 100%;
         background-color: transparent;
         top: 0;
+        #{$self}__logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-59%);
+        }
     }
     &__logo {
         margin: 0 auto;
@@ -74,9 +80,22 @@ a {
             width: 100%;
         }
     }
+    &__search-input {
+        position: relative;
+        svg {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            opacity: 0.25;
+        }
+    }
     &__item {
         font-size: 18px;
-        margin-bottom: 30px;
+        padding: 15px;
+        &:hover {
+            background-color: #b3cee914;
+            border-radius: 6px;
+        }
         cursor: pointer;
         b {
             color: #bdc9d3;
@@ -99,9 +118,31 @@ a {
     background-size: cover;
 }
 
+.rangeslider {
+    width: 100% !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    &-horizontal {
+        height: 4px !important;
+    }
+    &__fill {
+        background-color: #6698cc !important;
+        box-shadow: none !important;
+    }
+    &__handle {
+        width: 12px !important;
+        height: 12px !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        background-color: #6698cc !important;
+        &::after {
+            display: none !important;
+        }
+    }
+}
+
 .player {
     background-color: rgba(255, 255, 255, 0.85);
-    height: 200px;
     padding: 30px;
     position: absolute;
     bottom: 0;
@@ -266,7 +307,7 @@ a {
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 4px;
     padding: 25px 30px;
-    margin-top: 25px;
+    margin-top: 15px;
     top: 0;
     ul {
         max-height: 600px;
@@ -274,6 +315,13 @@ a {
         li {
             margin-bottom: 14px;
             font-size: 16px;
+            &.active {
+                span,
+                i {
+                    color: #5b9de6;
+                    font-weight: bold;
+                }
+            }
             span,
             i {
                 color: #8e959c;

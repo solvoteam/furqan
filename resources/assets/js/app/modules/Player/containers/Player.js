@@ -1,6 +1,7 @@
 import { compose, withHandlers, withState, lifecycle } from 'recompose';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { push } from 'react-router-redux';
 
 import * as actions from '../actions';
 import * as surahsListActions from '../../SurahsList/actions';
@@ -13,29 +14,47 @@ export default compose(
             ayat: surah.ayats[surah.curAyat],
             surah: surah.surah,
         }),
-        { ...actions, ...surahsListActions },
+        { ...actions, ...surahsListActions, push },
     ),
     withState('isPlaying', 'setIsPlaying', false),
+    withState('volume', 'setVolume', 0.4),
     withState('progress', 'setProgress', 0),
+    withState('currentTime', 'setCurrentTime', 0),
     withState('time', 'setTime', { duration: 0, currentTime: 0 }),
     withState('audioElem', 'setAudioElem', null),
     withHandlers({
-        handlePlaying: ({ setIsPlaying }) => bool => {
-            setIsPlaying(bool);
+        onPlay: ({ setIsPlaying }) => () => {
+            setIsPlaying(true);
         },
-        onFinisAyat: ({ nextAyat }) => () => {
+        onPause: ({ setIsPlaying }) => () => {
+            setIsPlaying(false);
+        },
+        onFinish: ({ nextAyat }) => () => {
             nextAyat();
         },
-        updateProgress: ({ audioElem, setProgress, setTime }) => () => {
+        updateProgress: ({ audioElem, setProgress, setTime, setCurrentTime }) => () => {
             const { duration, currentTime } = audioElem;
             const progress = (currentTime * 100) / duration;
             setProgress(progress);
             setTime({ duration: duration || 0, currentTime: currentTime || 0 });
         },
+        togglePlay: ({ setIsPlaying, isPlaying, audioElem }) => () => {
+            if (isPlaying) {
+                audioElem.pause();
+            } else {
+                audioElem.play();
+            }
+        },
+        nextSurah: ({ push, surah }) => () => {
+            push(`/surah/${surah.number + 1}/ayat/1`);
+        },
+        prevSurah: ({ push, surah }) => () => {
+            push(`/surah/${surah.number - 1}/ayat/1`);
+        },
     }),
     lifecycle({
         componentDidMount() {
-            const { setAudioElem, updateProgress, setTime } = this.props;
+            const { setAudioElem, updateProgress, setTime, setCurrentTime } = this.props;
             const audioElem = document.getElementById('audio-player-media');
             setTime({ duration: audioElem.duration || 0, currentTime: 0 });
             setAudioElem(audioElem);
@@ -52,15 +71,28 @@ export default compose(
                 audioElem.currentTime = 0;
                 audioElem.play();
             }
+            if (prevProps.currentTime !== this.props.currentTime) {
+                audioElem.currentTime = this.props.currentTime;
+                audioElem.play();
+            }
             if (prevProps.match.params.id !== match.params.id) {
                 window.axios.get(`/surah/${match.params.id}`).then(({ data }) => {
                     setAyats(data);
-                    setSurah(window.surahs[match.params.id - 1]);
+                    setCurAyatNumber(0);
+                    setSurah(window.surahs[parseInt(match.params.id) - 1]);
                 });
             }
-            // if (match.params.ayat && prevProps.match.params.ayat !== match.params.ayat) {
-            //     setCurAyatNumber(match.params.ayat);
-            // }
+            if (prevProps.match.params.ayat !== match.params.ayat) {
+                setCurAyatNumber(match.params.ayat - 1);
+            }
+            if (prevProps.volume !== this.props.volume) {
+                if (!this.props.volume) {
+                    prevProps.audioElem.muted = true;
+                } else {
+                    prevProps.audioElem.muted = false;
+                }
+                this.props.audioElem.volume = this.props.volume;
+            }
         },
     }),
 )(Player);

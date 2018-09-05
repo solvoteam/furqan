@@ -2,6 +2,8 @@ import React from 'react';
 
 import Icon from '../../../components/Icon';
 import timeToSeconds from '../../../utils/timeToSeconds';
+import Slider from 'react-rangeslider';
+import 'react-rangeslider/lib/index.css';
 
 class Player extends React.Component {
     constructor() {
@@ -10,8 +12,9 @@ class Player extends React.Component {
 
     render() {
         const {
-            handlePlaying,
-            onFinisAyat,
+            onPlay,
+            onPause,
+            onFinish,
             nextAyat,
             prevAyat,
             progress,
@@ -19,6 +22,13 @@ class Player extends React.Component {
             surah,
             isPlaying,
             time,
+            volume,
+            setVolume,
+            setCurrentTime,
+            togglePlay,
+            duration,
+            nextSurah,
+            prevSurah,
         } = this.props;
         const leftTime = timeToSeconds(time.currentTime);
         const fullTime = timeToSeconds(time.duration);
@@ -33,37 +43,54 @@ class Player extends React.Component {
                     </div>
                     <div id="main-progress" className="player__progress-bar">
                         <span>{leftTime}</span>
-                        <div className="player__progress-bar-line">
-                            <i />
-                            <div style={{ width: `${progress}%` }}>
-                                <i />
-                            </div>
-                        </div>
+                        <Slider
+                            min={0}
+                            max={duration}
+                            step={1}
+                            value={progress}
+                            tooltip={false}
+                            onChange={value => {
+                                setCurrentTime((value / 100) * time.duration);
+                            }}
+                        />
                         <span>{fullTime}</span>
                     </div>
                     <div className="player__controllers">
                         <div className="player__controllers-buttons">
-                            <Icon width={20} height={20} name="skip" className="mirror" />
+                            <Icon
+                                onClick={prevSurah}
+                                width={20}
+                                height={20}
+                                name="skip"
+                                className="mirror"
+                            />
                             <Icon onClick={prevAyat} name="next" className="mirror" />
-                            <Icon name={isPlaying ? 'pause' : 'play'} />
+                            <Icon onClick={togglePlay} name={isPlaying ? 'pause' : 'play'} />
                             <Icon onClick={nextAyat} name="next" />
-                            <Icon width={20} height={20} name="skip" />
+                            <Icon onClick={nextSurah} width={20} height={20} name="skip" />
                         </div>
                         <div className="player__controllers-volume">
                             <Icon width={16} height={16} name="volume" className="mirror" />
-                            <div className="player__progress-bar-line">
-                                <div>
-                                    <i />
-                                </div>
-                            </div>
+                            <Slider
+                                min={0}
+                                max={1}
+                                step={0.05}
+                                value={volume}
+                                tooltip={false}
+                                onChange={value => {
+                                    console.log(value);
+                                    setVolume(value);
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
                 <audio
                     id="audio-player-media"
                     preload="auto"
-                    onPlay={handlePlaying.bind(this, true)}
-                    onPause={onFinisAyat}
+                    onPlay={onPlay}
+                    onPause={onPause}
+                    onEnded={onFinish}
                     src={ayat.audio}
                 />
             </div>

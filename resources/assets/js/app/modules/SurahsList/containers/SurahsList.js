@@ -23,8 +23,8 @@ export default compose(
         onOpenSurah: ({ push, setAyats, setSurah }) => number => {
             window.axios.get(`/surah/${number}`).then(({ data }) => {
                 setAyats(data);
-                setSurah(allSurahs[number]);
-                push(`/surah/${number}`);
+                setSurah(allSurahs[number - 1]);
+                push(`/surah/${number}/ayat/1`);
             });
         },
     }),
