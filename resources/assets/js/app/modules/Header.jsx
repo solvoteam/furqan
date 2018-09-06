@@ -17,14 +17,14 @@ const Header = ({ inPlayer, surahs, ayats, currentAyatNumber, currentSurah }) =>
                         id="surahs-popup"
                         onOpened={() => {
                             setTimeout(() => {
-                                document.querySelector('.popover-body ul').scrollTop =
+                                document.querySelector('.popover-body div div').scrollTop =
                                     document.querySelector(
                                         '.popover-body ul #surah-' + currentSurah.number,
                                     ).offsetTop -
                                     document.querySelector(
                                         '.popover-body ul #surah-' + currentSurah.number,
-                                    ).offsetHeight *
-                                        2;
+                                    ).offsetHeight +
+                                    10;
                             });
                         }}
                         target={

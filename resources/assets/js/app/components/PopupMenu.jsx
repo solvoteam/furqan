@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { compose, withHandlers, withState, lifecycle } from 'recompose';
 import { Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 const PopupMenu = ({ id, open, title, onClick, target, children }) => {
     return (
@@ -15,7 +16,9 @@ const PopupMenu = ({ id, open, title, onClick, target, children }) => {
                         target={id}
                         toggle={onClick}>
                         {title && <PopoverHeader>Popover Title</PopoverHeader>}
-                        <PopoverBody>{children}</PopoverBody>
+                        <PopoverBody>
+                            <Scrollbars style={{ width: 200, height: 400 }}>{children}</Scrollbars>
+                        </PopoverBody>
                     </Popover>
                 )}
             </div>

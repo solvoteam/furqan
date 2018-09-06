@@ -1,17 +1,39 @@
 import React from 'react';
 import { compose, lifecycle, withState } from 'recompose';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
-const Ayat = ({ ayat, visibleAyat }) => (
-    <div className="container">
-        <div className="ayat-block">
-            <p className="ayat-block__arabic">{ayat.text}</p>
-            <p className="ayat-block__translate">
-                {ayat.number}. {ayat.translation.text}
-            </p>
+const Ayat = ({ ayat }) => {
+    const size = () => {
+        if (ayat.translation.text.length > 320) {
+            return 2;
+        } else if (ayat.translation.text.length > 120) {
+            return 3;
+        } else {
+            return 0;
+        }
+    };
+    return (
+        <div className="container">
+            <div className="ayat-block">
+                <p
+                    className={classNames(
+                        'ayat-block__arabic',
+                        `ayat-block__arabic--size-${size()}`,
+                    )}>
+                    {ayat.text}
+                </p>
+                <p
+                    className={classNames(
+                        'ayat-block__translate',
+                        `ayat-block__translate--size-${size()}`,
+                    )}>
+                    {ayat.number}. {ayat.translation.text}
+                </p>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default compose(
     connect(({ surah }) => ({
